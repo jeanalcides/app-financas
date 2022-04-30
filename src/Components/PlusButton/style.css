@@ -1,0 +1,16 @@
+.plusButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c9af2;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border: 0;
+  outline: none;
+}
