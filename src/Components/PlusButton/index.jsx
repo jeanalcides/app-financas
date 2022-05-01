@@ -1,23 +1,27 @@
 import { FaPlus } from "react-icons/fa";
 import "./style.css";
 import "../../Helpers/LocalDB";
-import { setLocalStorage } from "../../Helpers/LocalDB";
+import { getLocalStorage, setLocalStorage } from "../../Helpers/LocalDB";
 
-const data = [
-  {
-    title: "Supermercados Bergamini",
-    type: "crédito à vista",
-    payType: "Cartão",
-    category: "Alimentação",
-    amount: 91.8,
-    payAt: new Date()
-  }
-];
+const item =
+{
+  title: "Supermercados Bergamini",
+  type: "crédito à vista",
+  payType: "Cartão",
+  category: "Alimentação",
+  amount: 91.8,
+  payAt: new Date()
+};
+
+function handleAddMoviment() {
+  const data = getLocalStorage('db-mov');
+  const newItem = [...data, item]
+  setLocalStorage("db-mov", newItem);
+  console.log(data)
+}
 
 export function PlusButton() {
-  function handleAddMoviment() {
-    setLocalStorage("db-mov", data);
-  }
+
 
   return (
     <button className="plusButton" onClick={handleAddMoviment}>
