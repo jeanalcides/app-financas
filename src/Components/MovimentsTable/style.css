@@ -1,6 +1,7 @@
 .movimentsTable {
   width: 95%;
   margin: 5px auto;
+  padding: 10px;
   border-radius: 10px;
   background-color: #242426;
 }

@@ -1,20 +1,26 @@
 import "./style.css";
 
-import { FaArrowUp } from "react-icons/fa";
+import { FiArrowUp } from 'react-icons/fi';
 
-export function MovimentItem({item}) {
+export function MovimentItem({ item }) {
   return (
     <div className="itemTable">
       <div className="iconItem">
-        <FaArrowUp />
+        <FiArrowUp />
       </div>
-      <div className="infoItem twoRowIem">
+      <div className="infoItem twoRowItem">
         <h6>{item.title}</h6>
         <p>{item.category}</p>
       </div>
       <div className="mountIten twoRowItem">
-        <h5>{item.amount}</h5>
-        <p>{item.payAt}</p>
+        <h3>
+          {new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+          }).format(item.amount)
+          }</h3>
+        <p>
+          {new Intl.DateTimeFormat('pt-BR').format(new Date(item.payAt))}</p>
       </div>
     </div>
   );
