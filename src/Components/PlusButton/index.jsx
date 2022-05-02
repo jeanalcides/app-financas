@@ -20,11 +20,11 @@ function handleAddMoviment() {
   console.log(data)
 }
 
-export function PlusButton() {
+export function PlusButton({ onOpenNewTransactionModal }) {
 
 
   return (
-    <button className="plusButton" onClick={handleAddMoviment}>
+    <button className="plusButton" onClick={onOpenNewTransactionModal}>
       <FaPlus />
     </button>
   );
